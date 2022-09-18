@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-const TodoItem = ({ todo, onDelete, onCheck }) => {
+const TodoItem = ({
+  todo,
+  onDelete,
+  onCheck,
+  editTodoItem,
+  isEdit,
+  setEdit,
+}) => {
+  const [editValue, setEditValue] = useState(todo.text);
   return (
     <li className="todo">
       <input
@@ -9,8 +17,18 @@ const TodoItem = ({ todo, onDelete, onCheck }) => {
         checked={todo.complete}
         onChange={() => onCheck(todo.id)}
       ></input>
-
-      <div>{todo.text}</div>
+      {isEdit ? (
+        <input
+          type="text"
+          value={editValue}
+          onChange={(e) => setEditValue(e.target.text)}
+          onBlur={() => {
+            editTodoItem(editValue, todo.id);
+          }}
+        />
+      ) : (
+        <div onDoubleClick={() => setEdit(true)}>{todo.text}</div>
+      )}
 
       <button onClick={() => onDelete(todo.id)}>X</button>
     </li>

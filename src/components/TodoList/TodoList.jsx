@@ -1,7 +1,14 @@
 import React from "react";
 import TodoItem from "../TodoItem/TodoItem";
 
-const Todolist = ({ onDelete, onCheck, todos }) => {
+const Todolist = ({
+  onDelete,
+  onCheck,
+  todos,
+  editTodoItem,
+  isEdit,
+  setEdit,
+}) => {
   console.log(todos);
   return (
     <div>
@@ -14,6 +21,9 @@ const Todolist = ({ onDelete, onCheck, todos }) => {
               key={todo.id}
               onDelete={onDelete}
               onCheck={onCheck}
+              editTodoItem={editTodoItem}
+              isEdit={isEdit}
+              setEdit={setEdit}
             />
           ))}
       </ul>

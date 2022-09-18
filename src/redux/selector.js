@@ -2,5 +2,14 @@ import { createSelector } from "reselect";
 
 export const todosSelector = createSelector(
   (state) => state,
-  (state) => state.tasks
+  (state) => {
+    return state.tasks;
+  }
+);
+export const filterSelector = createSelector(
+  (state) => state,
+  (state) => {
+    console.log(state.filter);
+    return state.filter;
+  }
 );

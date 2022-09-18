@@ -4,6 +4,10 @@ import {
   COMPLETE_TODO,
   CHECK_ALL_TODO,
   CLEAR_COMPLETED,
+  COMPLETED_FILTER,
+  ACTIVE_FILTER,
+  ALL_FILTER,
+  EDIT_TODO_ITEM,
 } from "../redux/reducer/constant";
 
 export const addTodo = (id, text, complete) => ({
@@ -25,4 +29,18 @@ export const checkAllTodo = () => ({
 });
 export const clearCompleted = () => ({
   type: CLEAR_COMPLETED,
+});
+export const completedFilter = () => ({
+  type: COMPLETED_FILTER,
+});
+export const activeFilter = () => ({
+  type: ACTIVE_FILTER,
+});
+export const allFilter = () => ({
+  type: ALL_FILTER,
+});
+export const editTodo = (editText, id) => ({
+  type: EDIT_TODO_ITEM,
+  editText,
+  id,
 });

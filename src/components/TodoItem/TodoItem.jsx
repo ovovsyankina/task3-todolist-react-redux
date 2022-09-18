@@ -1,36 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 
 const TodoItem = ({
   todo,
   onDelete,
   onCheck,
-  editTodoItem,
+  editText,
   isEdit,
   setEdit,
+  onEditTodoItem,
+  setEditText,
+  onEditTodoItemEnter,
 }) => {
-  const [editValue, setEditValue] = useState(todo.text);
   return (
     <li className="todo">
       <input
         type="checkbox"
         className="todo_checkbox"
         checked={todo.complete}
-        onChange={() => onCheck(todo.id)}
+        onChange={onCheck}
+        id={todo.id}
       ></input>
+      <label className="label_textTask" htmlFor={todo.id}>
+        {" "}
+      </label>
       {isEdit ? (
         <input
           type="text"
-          value={editValue}
-          onChange={(e) => setEditValue(e.target.text)}
-          onBlur={() => {
-            editTodoItem(editValue, todo.id);
+          value={editText.replace(/\s+/g, " ")}
+          className="textTask_input"
+          onChange={(e) => setEditText(e.target.value)}
+          ref={(input) => input && input.focus()}
+          onBlur={onEditTodoItem}
+          onKeyDown={(e) => {
+            onEditTodoItemEnter(e);
           }}
         />
       ) : (
-        <div onDoubleClick={() => setEdit(true)}>{todo.text}</div>
+        <div className="textTask" onDoubleClick={() => setEdit(true)}>
+          {todo.text}
+        </div>
       )}
 
-      <button onClick={() => onDelete(todo.id)}>X</button>
+      <button className="todoDelete" onClick={onDelete}></button>
     </li>
   );
 };

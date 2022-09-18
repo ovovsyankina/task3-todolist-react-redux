@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../action/action";
+import { addTodo, checkAllTodo } from "../../action/action";
 import TodoInput from "../../components/TodoInput/TodoInput";
 
 const TodoInputContainer = () => {
@@ -8,20 +8,29 @@ const TodoInputContainer = () => {
   const dispatch = useDispatch();
   const addNewTodo = useCallback(
     (e) => {
-      e.preventDefault();
-      if (value.trim().length !== 0) {
-        dispatch(addTodo(Date.now(), value, false));
-        setValue("");
-      } else {
-        setValue("");
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (value.trim().length !== 0) {
+          dispatch(addTodo(Date.now(), value, false));
+          setValue("");
+        } else {
+          setValue("");
+        }
       }
-      console.log(value);
-      console.log("add");
     },
     [dispatch, value]
   );
+
+  const handleCheckAll = useCallback(() => {
+    dispatch(checkAllTodo());
+  }, [dispatch]);
   return (
-    <TodoInput value={value} addNewTodo={addNewTodo} setValue={setValue} />
+    <TodoInput
+      value={value}
+      addNewTodo={addNewTodo}
+      setValue={setValue}
+      onCheckAll={handleCheckAll}
+    />
   );
 };
 

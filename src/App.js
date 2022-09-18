@@ -2,12 +2,12 @@ import React from "react";
 import FilterContainer from "./containers/FilterContainer/FilterContainer";
 import TodoInputContainer from "./containers/TodoInputContainer/TodoInputContainer";
 import TodoListContainer from "./containers/TodoListContainer/TodoListContainer";
-import "./index.css";
+import "./style/index.css";
 const App = () => {
   return (
     <div>
-      <TodoInputContainer />
-      <FilterContainer />
+      <div className="fon"></div>
+
       <TodoListContainer />
     </div>
   );

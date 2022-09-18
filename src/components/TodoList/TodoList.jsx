@@ -1,32 +1,32 @@
 import React from "react";
-import TodoItem from "../TodoItem/TodoItem";
+import TodoItemContainer from "../../containers/TodoItemContainer/TodoItemContainer";
 
-const Todolist = ({
-  onDelete,
-  onCheck,
-  todos,
-  editTodoItem,
-  isEdit,
-  setEdit,
-}) => {
-  console.log(todos);
+const Todolist = ({ todos, filter, counter, sharedTodos }) => {
   return (
-    <div>
+    <div className="list_todo">
       <ul className="list_items">
         {todos &&
           todos.length > 0 &&
-          todos.map((todo) => (
-            <TodoItem
-              todo={todo}
-              key={todo.id}
-              onDelete={onDelete}
-              onCheck={onCheck}
-              editTodoItem={editTodoItem}
-              isEdit={isEdit}
-              setEdit={setEdit}
-            />
-          ))}
+          todos.map((todo) => <TodoItemContainer todo={todo} key={todo.id} />)}
       </ul>
+
+      {counter() === 0 && sharedTodos.length === 0 ? (
+        <div className="style_alert">You haven't added any tasks</div>
+      ) : (
+        ""
+      )}
+      {counter() === 0 && filter === "active" && sharedTodos.length !== 0 ? (
+        <div className="style_alert">There is no active tasks</div>
+      ) : (
+        ""
+      )}
+      {counter() === sharedTodos.length &&
+      filter === "completed" &&
+      sharedTodos.length !== 0 ? (
+        <div className="style_alert">There is no completed tasks</div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

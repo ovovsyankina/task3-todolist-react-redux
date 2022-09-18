@@ -9,7 +9,7 @@ import {
 const defaultState = [];
 const tasks = (
   state = defaultState,
-  { id, text, complete, type, editText }
+  { id, text, complete, type, editText, index }
 ) => {
   switch (type) {
     case ADD_TODO:
@@ -17,7 +17,7 @@ const tasks = (
         ...state,
         {
           id,
-          text,
+          text: text.trim().replace(/\s+/g, " "),
           complete,
         },
       ];
@@ -44,6 +44,7 @@ const tasks = (
         }
         return todo;
       });
+
     default:
       return state;
   }

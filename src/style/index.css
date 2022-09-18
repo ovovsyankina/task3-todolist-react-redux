@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "mon-Bold";
+  src: url(./fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: "mon";
+  src: url(./fonts/Montserrat-Medium.ttf);
+}
+#root {
+  position: relative;
+  width: 100%;
+}
+
+.todo_checkbox:checked + label + div {
+  text-decoration: line-through;
+  color: gray;
+}
+.todo_checkbox:checked:hover + label + div {
+  border-color: #1b1f2b;
+}
+.fon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  opacity: 0.5;
+  background-image: url(.//img/fon.jpg);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head {
+  font-family: mon-Bold;
+  margin-top: 80px;
+  letter-spacing: 10px;
+  font-size: 70px;
+}
+.inputField {
+  width: 1170px;
+  margin-top: 70px;
+}
+.inputText {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border: 3px solid black;
+  font-size: 30px;
+  padding: 5px 60px 5px 100px;
+}
+.inputText:focus,
+.inputText:active {
+  border: 3px solid black;
+  outline: none;
+}
+::placeholder {
+  opacity: 0.3;
+}
+.allCompleted {
+  position: absolute;
+  color: black;
+  min-width: 26px;
+  height: 26px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin: 32px 27px 10px 27px;
+}
+.allCompleted::before {
+  position: absolute;
+  content: "❯";
+  width: 26px;
+  height: 26px;
+  font-size: 34px;
+  margin: -11px 0;
+}
+.allCompleted:hover {
+  color: rgb(111, 111, 111);
+  cursor: pointer;
+}
+.main,
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  border-bottom: none;
+  width: 1170px;
+  height: 70px;
+  margin-top: 30px;
+  padding: 0 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+}
+.all_filter,
+.active_filter,
+.completed_filter,
+.clearCompleted {
+  font-family: mon;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  font-size: 25px;
+  border: none;
+  height: 40px;
+  border: 2px solid white;
+  transition: 500ms;
+}
+
+.all_filter:hover,
+.active_filter:hover,
+.completed_filter:hover,
+.clearCompleted:hover {
+  transition: 200ms;
+  color: rgb(111, 111, 111);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.count {
+  display: flex;
+  align-items: center;
+  font-family: mon, sans-serif;
+  width: 160px;
+  justify-content: center;
+  font-size: 25px;
+}
+.list_todo {
+  display: flex;
+  padding: 30px 30px 60px 30px;
+  margin-bottom: 30%;
+  width: 1170px;
+  background-color: white;
+  font-size: 30px;
+  border: 3px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.list_items {
+  width: 100%;
+}
+.todo {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.todo_checkbox:checked {
+  background-color: white;
+}
+.todo_checkbox {
+  display: none;
+}
+.todo_checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.todo_checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #1b1f2b;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transition: 200ms;
+  transform: scale(1);
+}
+
+.todo_checkbox:checked + label::before {
+  border-color: #1b1f2b;
+  background-color: white;
+  background-image: url(./img/check_dogovor.svg);
+  background-size: 75%;
+  /* background-position: center; */
+}
+.todo_checkbox:hover + label::before {
+  border-color: rgb(111, 111, 111);
+}
+.todo_checkbox:checked:hover + label::before {
+  border-color: #1b1f2b;
+}
+.textTask {
+  font-family: sans-serif;
+  width: calc(100% - 130px);
+  border-bottom: 3px solid black;
+  word-wrap: break-word;
+}
+
+.textTask_input {
+  all: unset;
+  font-family: sans-serif;
+  width: calc(100% - 130px);
+  border-bottom: 3px solid black;
+  word-wrap: break-word;
+}
+.todoDelete {
+  justify-content: center;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 30px;
+  min-width: 30px;
+  background-image: url(./img/close_111152.svg);
+  background-position: center;
+
+  background-color: white;
+  background-size: 140%;
+  background-repeat: repeat-x;
+  border: none;
+  transition: 400ms;
+  transform: scale(1);
+}
+.todoDelete:hover,
+.label_textTask:hover,
+.textTask_input:hover {
+  cursor: pointer;
+}
+.todoDelete:hover {
+  transition: 800ms;
+  transform: scale(1.2);
+}
+.style_alert {
+  all: unset;
+  position: absolute;
+  font-family: mon;
+  height: 30px;
+  width: 1100px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.textTask:hover {
+  cursor: pointer;
+}
+.active_button {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1250px) {
+  .filter_main,
+  .inputField,
+  .list_todo {
+    width: 90%;
+  }
+  .style_alert {
+    width: calc(87% - 60px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .filter_main {
+    height: 110px;
+  }
+
+  .filter {
+    width: 75%;
+    height: 110px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .filter {
+    width: 94%;
+  }
+  .filter_main,
+  .inputField,
+  .list_todo {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .all_filter,
+  .active_filter,
+  .completed_filter,
+  .clearCompleted {
+    font-size: 20px;
+    padding: 2px 5px;
+  }
+  .filter {
+    width: 78%;
+  }
+  .list_todo {
+    padding: 10px 10px 40px 10px;
+  }
+  .style_alert {
+    width: calc(95% - 20px);
+    font-size: 20px;
+  }
+  .textTask {
+    width: calc(100% - 110px);
+  }
+  .todoDelete {
+    background-size: 120%;
+  }
+  .todo {
+    font-size: 20px;
+  }
+  .count {
+    width: 120px;
+    font-size: 20px;
+  }
+  .head {
+    font-size: 60px;
+    letter-spacing: 0px;
+  }
+  .list_todo {
+    font-size: 25px;
+  }
+  .input_text {
+    font-size: 25px;
+    padding: 5px 20px 5px 70px;
+  }
+  .allCompleted::before {
+    font-size: 30px;
+  }
+  ::placeholder {
+    font-size: 22px;
+  }
+  .filter_main {
+    padding: 0 10px;
+  }
+  .todo_checkbox + label::before {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .filter {
+    width: 98%;
+  }
+}

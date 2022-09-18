@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createStore, compose } from "redux";
 import rootReducer from "./index";
 
@@ -8,11 +9,15 @@ const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
-/* eslint-enable */
-
+const persistedState = localStorage.getItem("reduxState")
+  ? JSON.parse(localStorage.getItem("reduxState"))
+  : {};
 const configureStore = (preloadedState) =>
-  createStore(rootReducer, preloadedState, composeEnhancers());
+  createStore(rootReducer, persistedState, composeEnhancers());
 
 const store = configureStore({});
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export default store;

@@ -1,38 +1,13 @@
-import React, { useCallback, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { checkTodo, deleteTodo, editTodo } from "../../action/action";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Todolist from "../../components/TodoList/TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";
+import FilterContainer from "../FilterContainer/FilterContainer";
+import TodoInputContainer from "../TodoInputContainer/TodoInputContainer";
 
 const TodoListContainer = () => {
-  const dispatch = useDispatch();
   const todos = useSelector(todosSelector);
   const filter = useSelector(filterSelector);
-  const [isEdit, setEdit] = useState(false);
-  const handleDelete = useCallback(
-    (id) => {
-      console.log("remove");
-      dispatch(deleteTodo(id));
-    },
-    [dispatch]
-  );
-
-  const handleCheck = useCallback(
-    (id) => {
-      console.log("check");
-      dispatch(checkTodo(id));
-    },
-    [dispatch]
-  );
-
-  const editTodoItem = useCallback(
-    (editText, id) => {
-      setEdit(false);
-      console.log("edit >> ", editTodo(editText, id));
-      dispatch(editTodo(editText, id));
-    },
-    [dispatch]
-  );
 
   const filterTodo = () => {
     if (filter === "active") {
@@ -43,15 +18,27 @@ const TodoListContainer = () => {
       return todos;
     }
   };
+  const counter = () => {
+    let index = 0;
+    todos.map((todo) => (!todo.complete ? (index = index + 1) : index));
+    return index;
+  };
   return (
-    <Todolist
-      onDelete={handleDelete}
-      onCheck={handleCheck}
-      todos={filterTodo()}
-      editTodoItem={editTodoItem}
-      isEdit={isEdit}
-      setEdit={setEdit}
-    />
+    <div className="body">
+      <div className="header">
+        <div className="head">TODO LIST</div>
+        <TodoInputContainer />
+      </div>
+      <div className="main">
+        <FilterContainer counter={counter} filter={filter} />
+        <Todolist
+          todos={filterTodo()}
+          filter={filter}
+          counter={counter}
+          sharedTodos={todos}
+        />
+      </div>
+    </div>
   );
 };
 export default TodoListContainer;

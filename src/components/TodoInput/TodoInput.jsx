@@ -1,17 +1,19 @@
 import React from "react";
 
-const TodoInput = ({ value, addNewTodo, setValue }) => {
+const TodoInput = ({ value, addNewTodo, setValue, onCheckAll }) => {
   return (
-    <div>
-      <form>
-        <input
-          type="text"
-          value={value}
-          placeholder="Введите задачу"
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button onClick={addNewTodo}>Создать задачу</button>
-      </form>
+    <div className="inputField">
+      <label className="allCompleted" onClick={onCheckAll}></label>
+      <input
+        type="text"
+        value={value}
+        className="inputText"
+        placeholder="What needs to be done?"
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          addNewTodo(e);
+        }}
+      />
     </div>
   );
 };

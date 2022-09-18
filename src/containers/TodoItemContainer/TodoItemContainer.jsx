@@ -1,18 +1,51 @@
 import React, { useCallback, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { checkTodo, deleteTodo, editTodo } from "../../action/action";
-import Todolist from "../../components/TodoList/TodoList";
-import { todosSelector, filterSelector } from "../../redux/selector";
+import TodoItem from "../../components/TodoItem/TodoItem";
 
-const TodoItemContainer = () => {
+const TodoItemContainer = ({ todo }) => {
+  const [isEdit, setEdit] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
+  const dispatch = useDispatch();
+
+  const handleDelete = useCallback(() => {
+    dispatch(deleteTodo(todo.id));
+  }, [dispatch, todo.id]);
+
+  const handleCheck = useCallback(() => {
+    dispatch(checkTodo(todo.id));
+  }, [dispatch, todo.id]);
+
+  const handleEditTodoItem = useCallback(() => {
+    if (editText.trim().length !== 0) {
+      setEdit(false);
+      dispatch(editTodo(editText, todo.id));
+    } else {
+      handleDelete();
+    }
+  }, [dispatch, editText, todo.id, handleDelete]);
+
+  const handleEditTodoItemEnter = useCallback(
+    (e) => {
+      if (e.key === "Enter") {
+        handleEditTodoItem();
+      }
+    },
+    [handleEditTodoItem]
+  );
+
   return (
-    <Todolist
+    <TodoItem
+      todo={todo}
+      key={todo.id}
       onDelete={handleDelete}
       onCheck={handleCheck}
-      todos={filterTodo()}
-      editTodoItem={editTodoItem}
+      editText={editText}
       isEdit={isEdit}
       setEdit={setEdit}
+      onEditTodoItem={handleEditTodoItem}
+      setEditText={setEditText}
+      onEditTodoItemEnter={handleEditTodoItemEnter}
     />
   );
 };

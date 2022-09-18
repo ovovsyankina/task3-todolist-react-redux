@@ -30,6 +30,12 @@ export const checkAllTodo = () => ({
 export const clearCompleted = () => ({
   type: CLEAR_COMPLETED,
 });
+export const editTodo = (editText, id) => ({
+  type: EDIT_TODO_ITEM,
+  editText,
+  id,
+});
+
 export const completedFilter = () => ({
   type: COMPLETED_FILTER,
 });
@@ -38,9 +44,4 @@ export const activeFilter = () => ({
 });
 export const allFilter = () => ({
   type: ALL_FILTER,
-});
-export const editTodo = (editText, id) => ({
-  type: EDIT_TODO_ITEM,
-  editText,
-  id,
 });

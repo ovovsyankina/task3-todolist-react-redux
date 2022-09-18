@@ -9,7 +9,6 @@ export const todosSelector = createSelector(
 export const filterSelector = createSelector(
   (state) => state,
   (state) => {
-    console.log(state.filter);
     return state.filter;
   }
 );

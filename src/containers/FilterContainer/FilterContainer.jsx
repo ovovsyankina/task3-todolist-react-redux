@@ -8,14 +8,9 @@ import {
   completedFilter,
 } from "../../action/action";
 import Filters from "../../components/Filters/Filters";
-import { filterSelector } from "../../redux/selector";
 
-const FilterContainer = () => {
+const FilterContainer = ({ counter, filter }) => {
   const dispatch = useDispatch();
-
-  const handleCheckAll = useCallback(() => {
-    dispatch(checkAllTodo());
-  }, [dispatch]);
 
   const handleClearCompleted = useCallback(() => {
     dispatch(clearCompleted());
@@ -35,11 +30,12 @@ const FilterContainer = () => {
 
   return (
     <Filters
-      onCheckAll={handleCheckAll}
       onClearCompleted={handleClearCompleted}
       onActiveFilter={handleActiveFilter}
       onAllFilter={handleAllFilter}
       onCompletedFilter={handleCompletedFilter}
+      counter={counter}
+      filter={filter}
     />
   );
 };

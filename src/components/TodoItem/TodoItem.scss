@@ -6,13 +6,8 @@
   list-style-type: none;
 }
 
-.textTask,
-.textTask_input {
-  width: calc(100% - 110px);
-}
-
 .textTask {
-  width: calc(100% - 130px);
+  width: calc(100% - 100px);
   font-family: sans-serif;
   word-wrap: break-word;
   border-bottom: 3px solid black;
@@ -20,7 +15,7 @@
 
 .textTask_input {
   all: unset;
-  width: calc(100% - 130px);
+  width: calc(100% - 100px);
   font-family: sans-serif;
   word-wrap: break-word;
   border-bottom: 3px solid black;
@@ -31,7 +26,7 @@
   min-width: 33px;
   height: 30px;
   min-height: 33px;
-  margin: auto 0 auto 20px;
+  margin: auto 0;
   font-size: 20px;
   justify-content: center;
   background-image: url(../../../public/img/close_111152.svg);
@@ -123,10 +118,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .todo {
-    font-size: 20px;
-  }
-
   .todo_checkbox + label::before {
     width: 22px;
     height: 22px;

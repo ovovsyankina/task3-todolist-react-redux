@@ -5,7 +5,7 @@ import {
   CHECK_ALL_TODO,
   CLEAR_COMPLETED,
   EDIT_TODO_ITEM,
-} from "./constant";
+} from "../constant";
 const defaultState = [];
 const tasks = (
   state = defaultState,

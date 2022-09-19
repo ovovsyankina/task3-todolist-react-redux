@@ -1,5 +1,5 @@
 import React from "react";
-import TodoListContainer from "./containers/TodoListContainer/TodoListContainer";
+import TodoListContainer from "./components/TodoList/TodoListContainer";
 import "./style/index.css";
 const App = () => {
   return (

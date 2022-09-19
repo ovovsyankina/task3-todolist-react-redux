@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { checkTodo, deleteTodo, editTodo } from "../../action/action";
-import TodoItem from "../../components/TodoItem/TodoItem";
+import { checkTodo, deleteTodo, editTodo } from "../../redux/action";
+import TodoItem from "./TodoItem";
 
 const TodoItemContainer = ({ todo }) => {
   const [isEdit, setEdit] = useState(false);

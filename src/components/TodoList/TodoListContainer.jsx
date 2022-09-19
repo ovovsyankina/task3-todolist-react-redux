@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Todolist from "../../components/TodoList/TodoList";
+import Todolist from "./TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";
-import FilterContainer from "../FilterContainer/FilterContainer";
-import TodoInputContainer from "../TodoInputContainer/TodoInputContainer";
+import FilterContainer from "../Filters/FilterContainer";
+import TodoInputContainer from "../TodoInput/TodoInputContainer";
 
 const TodoListContainer = () => {
   const todos = useSelector(todosSelector);

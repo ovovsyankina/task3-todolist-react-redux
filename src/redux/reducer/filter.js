@@ -1,4 +1,4 @@
-import { ACTIVE_FILTER, ALL_FILTER, COMPLETED_FILTER } from "./constant";
+import { ACTIVE_FILTER, ALL_FILTER, COMPLETED_FILTER } from "../constant";
 const defaultState = "all";
 
 const filter = (state = defaultState, { type }) => {

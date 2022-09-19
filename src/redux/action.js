@@ -8,7 +8,7 @@ import {
   ACTIVE_FILTER,
   ALL_FILTER,
   EDIT_TODO_ITEM,
-} from "../redux/reducer/constant";
+} from "./constant";
 
 export const addTodo = (id, text, complete) => ({
   type: ADD_TODO,

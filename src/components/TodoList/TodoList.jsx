@@ -1,5 +1,5 @@
 import React from "react";
-import TodoItemContainer from "../../containers/TodoItemContainer/TodoItemContainer";
+import TodoItemContainer from "../TodoItem/TodoItemContainer";
 
 const Todolist = ({ todos, filter, counter, sharedTodos }) => {
   return (

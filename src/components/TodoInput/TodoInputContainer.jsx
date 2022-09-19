@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, checkAllTodo } from "../../action/action";
-import TodoInput from "../../components/TodoInput/TodoInput";
+import { addTodo, checkAllTodo } from "../../redux/action";
+import TodoInput from "./TodoInput";
 
 const TodoInputContainer = () => {
   const [value, setValue] = useState("");

@@ -5,8 +5,8 @@ import {
   allFilter,
   clearCompleted,
   completedFilter,
-} from "../../action/action";
-import Filters from "../../components/Filters/Filters";
+} from "../../redux/action";
+import Filters from "./Filters";
 
 const FilterContainer = ({ counter, filter }) => {
   const dispatch = useDispatch();

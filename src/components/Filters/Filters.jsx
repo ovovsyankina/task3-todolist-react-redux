@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const Filters = ({
   onClearCompleted,
   onAllFilter,
@@ -50,5 +50,12 @@ const Filters = ({
     </div>
   );
 };
-
+Filters.propTypes = {
+  onClearCompleted: PropTypes.func,
+  onAllFilter: PropTypes.func,
+  onActiveFilter: PropTypes.func,
+  onCompletedFilter: PropTypes.func,
+  counter: PropTypes.func,
+  filter: PropTypes.string,
+};
 export default Filters;

@@ -1,7 +1,8 @@
 import React from "react";
 import TodoItemContainer from "../TodoItem/TodoItemContainer";
+import PropTypes from "prop-types";
 
-const Todolist = ({ todos, filter, counter, sharedTodos }) => {
+const TodoList = ({ todos, filter, counter, sharedTodos }) => {
   return (
     <div className="list_todo">
       <ul className="list_items">
@@ -30,4 +31,10 @@ const Todolist = ({ todos, filter, counter, sharedTodos }) => {
     </div>
   );
 };
-export default Todolist;
+TodoList.propTypes = {
+  todos: PropTypes.array,
+  filter: PropTypes.string,
+  counter: PropTypes.func,
+  sharedTodos: PropTypes.array,
+};
+export default TodoList;

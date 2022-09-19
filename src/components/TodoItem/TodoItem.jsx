@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const TodoItem = ({
   todo,
@@ -42,5 +43,16 @@ const TodoItem = ({
       <button className="todoDelete" onClick={onDelete}></button>
     </li>
   );
+};
+TodoItem.propTypes = {
+  todo: PropTypes.object,
+  onDelete: PropTypes.func,
+  onCheck: PropTypes.func,
+  editText: PropTypes.string,
+  isEdit: PropTypes.bool,
+  setEdit: PropTypes.func,
+  onEditTodoItem: PropTypes.func,
+  setEditText: PropTypes.func,
+  onEditTodoItemEnter: PropTypes.func,
 };
 export default TodoItem;

@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import { checkTodo, deleteTodo, editTodo } from "../../redux/action";
 import TodoItem from "./TodoItem";
+import PropTypes from "prop-types";
 
 const TodoItemContainer = ({ todo }) => {
   const [isEdit, setEdit] = useState(false);
@@ -48,5 +49,8 @@ const TodoItemContainer = ({ todo }) => {
       onEditTodoItemEnter={handleEditTodoItemEnter}
     />
   );
+};
+TodoItemContainer.propTypes = {
+  todos: PropTypes.array,
 };
 export default TodoItemContainer;

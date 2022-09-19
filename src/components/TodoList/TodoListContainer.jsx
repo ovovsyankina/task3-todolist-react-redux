@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Todolist from "./TodoList";
+import TodoList from "./TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";
 import FilterContainer from "../Filters/FilterContainer";
 import TodoInputContainer from "../TodoInput/TodoInputContainer";
@@ -31,7 +31,7 @@ const TodoListContainer = () => {
       </div>
       <div className="main">
         <FilterContainer counter={counter} filter={filter} />
-        <Todolist
+        <TodoList
           todos={filterTodo()}
           filter={filter}
           counter={counter}

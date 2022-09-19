@@ -9,7 +9,7 @@ import {
 const defaultState = [];
 const tasks = (
   state = defaultState,
-  { id, text, complete, type, editText, index }
+  { id, text, complete, type, editText }
 ) => {
   switch (type) {
     case ADD_TODO:
@@ -17,7 +17,7 @@ const tasks = (
         ...state,
         {
           id,
-          text: text.trim().replace(/\s+/g, " "),
+          text: text.trim().replace(/ /g, "\u00A0"),
           complete,
         },
       ];

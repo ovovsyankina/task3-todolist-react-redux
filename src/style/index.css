@@ -182,6 +182,8 @@
   display: inline-block;
   width: 30px;
   height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   flex-shrink: 0;
   flex-grow: 0;
   border: 2px solid #1b1f2b;
@@ -192,7 +194,14 @@
   transition: 200ms;
   transform: scale(1);
 }
-
+.label_textTask {
+  justify-content: center;
+  margin: auto 0 auto;
+  width: 30px;
+  height: 30px;
+  min-width: 33px;
+  min-height: 33px;
+}
 .todo_checkbox:checked + label::before {
   border-color: #1b1f2b;
   background-color: white;
@@ -223,11 +232,13 @@
 .todoDelete {
   justify-content: center;
   font-size: 20px;
-  margin-left: 20px;
   width: 30px;
-  min-width: 30px;
+  min-width: 33px;
+  height: 30px;
+  min-height: 33px;
   background-image: url(./img/close_111152.svg);
   background-position: center;
+  margin: auto 0 auto 20px;
 
   background-color: white;
   background-size: 140%;
@@ -314,12 +325,11 @@
     width: calc(95% - 20px);
     font-size: 20px;
   }
-  .textTask {
+  .textTask,
+  .textTask_input {
     width: calc(100% - 110px);
   }
-  .todoDelete {
-    background-size: 120%;
-  }
+
   .todo {
     font-size: 20px;
   }
@@ -334,7 +344,7 @@
   .list_todo {
     font-size: 25px;
   }
-  .input_text {
+  .inputText {
     font-size: 25px;
     padding: 5px 20px 5px 70px;
   }
@@ -350,6 +360,14 @@
   .todo_checkbox + label::before {
     width: 22px;
     height: 22px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+  .label_textTask {
+    width: 22px;
+    height: 22px;
+    min-width: 25px;
+    min-height: 25px;
   }
 }
 @media screen and (max-width: 450px) {

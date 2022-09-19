@@ -20,13 +20,11 @@ const TodoItem = ({
         onChange={onCheck}
         id={todo.id}
       ></input>
-      <label className="label_textTask" htmlFor={todo.id}>
-        {" "}
-      </label>
+      <label className="label_textTask" htmlFor={todo.id}></label>
       {isEdit ? (
         <input
           type="text"
-          value={editText.replace(/\s+/g, " ")}
+          value={editText}
           className="textTask_input"
           onChange={(e) => setEditText(e.target.value)}
           ref={(input) => input && input.focus()}
@@ -37,7 +35,7 @@ const TodoItem = ({
         />
       ) : (
         <div className="textTask" onDoubleClick={() => setEdit(true)}>
-          {todo.text}
+          {todo.text.trim()}
         </div>
       )}
 

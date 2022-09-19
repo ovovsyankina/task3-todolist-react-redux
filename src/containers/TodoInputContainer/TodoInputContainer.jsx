@@ -11,7 +11,9 @@ const TodoInputContainer = () => {
       if (e.key === "Enter") {
         e.preventDefault();
         if (value.trim().length !== 0) {
-          dispatch(addTodo(Date.now(), value, false));
+          dispatch(
+            addTodo(Date.now(), value.trim().replace(/ /g, "\u00A0"), false)
+          );
           setValue("");
         } else {
           setValue("");

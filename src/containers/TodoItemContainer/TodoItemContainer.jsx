@@ -19,7 +19,7 @@ const TodoItemContainer = ({ todo }) => {
   const handleEditTodoItem = useCallback(() => {
     if (editText.trim().length !== 0) {
       setEdit(false);
-      dispatch(editTodo(editText, todo.id));
+      dispatch(editTodo(editText.trim().replace(/ /g, "\u00A0"), todo.id));
     } else {
       handleDelete();
     }

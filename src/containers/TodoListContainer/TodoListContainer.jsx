@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Todolist from "../../components/TodoList/TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";

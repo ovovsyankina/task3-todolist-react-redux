@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createStore, compose } from "redux";
 import rootReducer from "./index";
 

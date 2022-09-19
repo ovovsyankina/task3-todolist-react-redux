@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import {
   activeFilter,
   allFilter,
-  checkAllTodo,
   clearCompleted,
   completedFilter,
 } from "../../action/action";

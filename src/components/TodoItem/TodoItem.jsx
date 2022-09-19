@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./TodoItem.scss";
 
 const TodoItem = ({
   todo,
@@ -44,6 +45,7 @@ const TodoItem = ({
     </li>
   );
 };
+
 TodoItem.propTypes = {
   todo: PropTypes.object,
   onDelete: PropTypes.func,
@@ -55,4 +57,5 @@ TodoItem.propTypes = {
   setEditText: PropTypes.func,
   onEditTodoItemEnter: PropTypes.func,
 };
+
 export default TodoItem;

@@ -6,6 +6,7 @@ import TodoInput from "./TodoInput";
 const TodoInputContainer = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
+
   const addNewTodo = useCallback(
     (e) => {
       if (e.key === "Enter") {
@@ -26,6 +27,7 @@ const TodoInputContainer = () => {
   const handleCheckAll = useCallback(() => {
     dispatch(checkAllTodo());
   }, [dispatch]);
+
   return (
     <TodoInput
       value={value}

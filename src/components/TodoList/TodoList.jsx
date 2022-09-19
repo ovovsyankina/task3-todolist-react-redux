@@ -1,6 +1,7 @@
 import React from "react";
 import TodoItemContainer from "../TodoItem/TodoItemContainer";
 import PropTypes from "prop-types";
+import "./TodoList.scss";
 
 const TodoList = ({ todos, filter, counter, sharedTodos }) => {
   return (
@@ -31,10 +32,12 @@ const TodoList = ({ todos, filter, counter, sharedTodos }) => {
     </div>
   );
 };
+
 TodoList.propTypes = {
   todos: PropTypes.array,
   filter: PropTypes.string,
   counter: PropTypes.func,
   sharedTodos: PropTypes.array,
 };
+
 export default TodoList;

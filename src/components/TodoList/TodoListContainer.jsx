@@ -18,11 +18,13 @@ const TodoListContainer = () => {
       return todos;
     }
   };
+
   const counter = () => {
     let index = 0;
     todos.map((todo) => (!todo.complete ? (index = index + 1) : index));
     return index;
   };
+
   return (
     <div className="body">
       <div className="header">
@@ -41,4 +43,5 @@ const TodoListContainer = () => {
     </div>
   );
 };
+
 export default TodoListContainer;

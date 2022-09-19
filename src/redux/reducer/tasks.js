@@ -6,7 +6,9 @@ import {
   CLEAR_COMPLETED,
   EDIT_TODO_ITEM,
 } from "../constant";
+
 const defaultState = [];
+
 const tasks = (
   state = defaultState,
   { id, text, complete, type, editText }
@@ -21,12 +23,15 @@ const tasks = (
           complete,
         },
       ];
+
     case DELETE_TODO:
       return state.filter((elem) => elem.id !== id);
+
     case COMPLETE_TODO:
       return state.map((todo) =>
         todo.id === id ? { ...todo, complete: !todo.complete } : todo
       );
+
     case CHECK_ALL_TODO:
       return state.some((element) => !element.complete)
         ? state.map((todo) => ({ ...todo, complete: (todo.complete = true) }))
@@ -34,6 +39,7 @@ const tasks = (
             ...todo,
             complete: (todo.complete = false),
           }));
+
     case CLEAR_COMPLETED:
       return state.filter((elem) => !elem.complete);
 
@@ -49,4 +55,5 @@ const tasks = (
       return state;
   }
 };
+
 export default tasks;

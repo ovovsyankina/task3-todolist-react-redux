@@ -39,8 +39,10 @@ const FilterContainer = ({ counter, filter }) => {
     />
   );
 };
+
 FilterContainer.propTypes = {
   counter: PropTypes.func,
   filter: PropTypes.string,
 };
+
 export default FilterContainer;

@@ -1,4 +1,5 @@
 import { ACTIVE_FILTER, ALL_FILTER, COMPLETED_FILTER } from "../constant";
+
 const defaultState = "all";
 
 const filter = (state = defaultState, { type }) => {
@@ -14,4 +15,5 @@ const filter = (state = defaultState, { type }) => {
       return state;
   }
 };
+
 export default filter;

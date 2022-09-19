@@ -16,20 +16,25 @@ export const addTodo = (id, text, complete) => ({
   text,
   complete,
 });
+
 export const deleteTodo = (id) => ({
   type: DELETE_TODO,
   id,
 });
+
 export const checkTodo = (id) => ({
   type: COMPLETE_TODO,
   id,
 });
+
 export const checkAllTodo = () => ({
   type: CHECK_ALL_TODO,
 });
+
 export const clearCompleted = () => ({
   type: CLEAR_COMPLETED,
 });
+
 export const editTodo = (editText, id) => ({
   type: EDIT_TODO_ITEM,
   editText,
@@ -39,9 +44,11 @@ export const editTodo = (editText, id) => ({
 export const completedFilter = () => ({
   type: COMPLETED_FILTER,
 });
+
 export const activeFilter = () => ({
   type: ACTIVE_FILTER,
 });
+
 export const allFilter = () => ({
   type: ALL_FILTER,
 });

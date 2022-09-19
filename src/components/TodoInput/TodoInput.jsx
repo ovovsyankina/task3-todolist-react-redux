@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./TodoInput.scss";
 
 const TodoInput = ({ value, addNewTodo, setValue, onCheckAll }) => {
   return (
@@ -18,10 +19,12 @@ const TodoInput = ({ value, addNewTodo, setValue, onCheckAll }) => {
     </div>
   );
 };
+
 TodoInput.propTypes = {
   value: PropTypes.string,
   addNewTodo: PropTypes.func,
   setValue: PropTypes.func,
   onCheckAll: PropTypes.func,
 };
+
 export default TodoInput;

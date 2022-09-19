@@ -50,7 +50,9 @@ const TodoItemContainer = ({ todo }) => {
     />
   );
 };
+
 TodoItemContainer.propTypes = {
   todos: PropTypes.array,
 };
+
 export default TodoItemContainer;

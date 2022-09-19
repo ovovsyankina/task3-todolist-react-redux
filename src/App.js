@@ -1,6 +1,7 @@
 import React from "react";
 import TodoListContainer from "./components/TodoList/TodoListContainer";
 import "./style/index.css";
+
 const App = () => {
   return (
     <div>
@@ -10,4 +11,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;

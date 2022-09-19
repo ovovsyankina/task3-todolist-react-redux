@@ -1,0 +1,76 @@
+.body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main,
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.head {
+  margin-top: 80px;
+  font-family: mon-Bold;
+  font-size: 70px;
+  letter-spacing: 10px;
+}
+
+.list_todo {
+  display: flex;
+  width: 1170px;
+  margin-bottom: 30%;
+  padding: 30px 30px 60px 30px;
+  font-size: 30px;
+  background-color: white;
+  border: 3px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.list_items {
+  width: 100%;
+}
+
+.style_alert {
+  all: unset;
+  position: absolute;
+  height: 30px;
+  width: 1100px;
+  font-family: mon;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+  .list_todo {
+    width: 90%;
+  }
+
+  .style_alert {
+    width: calc(87% - 60px);
+  }
+}
+@media screen and (max-width: 700px) {
+  .list_todo {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .list_todo {
+    padding: 10px 10px 40px 10px;
+    font-size: 25px;
+  }
+
+  .head {
+    font-size: 60px;
+    letter-spacing: 0px;
+  }
+
+  .style_alert {
+    width: calc(95% - 20px);
+    font-size: 20px;
+  }
+}

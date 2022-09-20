@@ -11,20 +11,20 @@
   color: black;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-}
 
-.allCompleted::before {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  margin: -11px 0;
-  font-size: 34px;
-  content: "❯";
-}
+  &:hover {
+    color: rgb(111, 111, 111);
+    cursor: pointer;
+  }
 
-.allCompleted:hover {
-  color: rgb(111, 111, 111);
-  cursor: pointer;
+  &::before {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    margin: -11px 0;
+    font-size: 34px;
+    content: "❯";
+  }
 }
 
 .inputText {
@@ -34,12 +34,12 @@
   font-size: 30px;
   border: 3px solid black;
   border-radius: 10px;
-}
 
-.inputText:focus,
-.inputText:active {
-  border: 3px solid black;
-  outline: none;
+  &:focus,
+  &:active {
+    border: 3px solid black;
+    outline: none;
+  }
 }
 
 ::placeholder {

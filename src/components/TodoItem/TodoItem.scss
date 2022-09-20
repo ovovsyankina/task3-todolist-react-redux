@@ -11,6 +11,10 @@
   font-family: sans-serif;
   word-wrap: break-word;
   border-bottom: 3px solid black;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .textTask_input {
@@ -19,6 +23,10 @@
   font-family: sans-serif;
   word-wrap: break-word;
   border-bottom: 3px solid black;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .todoDelete {
@@ -37,35 +45,36 @@
   border: none;
   transition: 400ms;
   transform: scale(1);
-}
 
-.todoDelete:hover {
-  transition: 800ms;
-  transform: scale(1.2);
+  &:hover {
+    transition: 800ms;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
 
 .todo_checkbox:checked + label + div {
   color: gray;
   text-decoration: line-through;
-}
 
-.todo_checkbox:checked:hover + label + div {
-  border-color: #1b1f2b;
-}
-
-.todo_checkbox:checked {
-  background-color: white;
+  &:hover {
+    border-color: #1b1f2b;
+  }
 }
 
 .todo_checkbox {
   display: none;
-}
 
-.todo_checkbox + label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
+  &:hover {
+    background-color: white;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
 }
 
 .todo_checkbox + label::before {
@@ -108,13 +117,10 @@
   min-height: 33px;
   margin: auto 0 auto;
   justify-content: center;
-}
 
-.todoDelete:hover,
-.label_textTask:hover,
-.textTask_input:hover,
-.textTask:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 600px) {

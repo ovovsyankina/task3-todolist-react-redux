@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import TodoList from "./TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";
 import FilterContainer from "../Filters/FilterContainer";
+
 import TodoInputContainer from "../TodoInput/TodoInputContainer";
 
 const TodoListContainer = () => {
@@ -26,21 +27,12 @@ const TodoListContainer = () => {
   };
 
   return (
-    <div className="body">
-      <div className="header">
-        <div className="head">TODO LIST</div>
-        <TodoInputContainer />
-      </div>
-      <div className="main">
-        <FilterContainer counter={counter} filter={filter} />
-        <TodoList
-          todos={filterTodo()}
-          filter={filter}
-          counter={counter}
-          sharedTodos={todos}
-        />
-      </div>
-    </div>
+    <TodoList
+      todos={filterTodo()}
+      filter={filter}
+      counter={counter}
+      sharedTodos={todos}
+    />
   );
 };
 

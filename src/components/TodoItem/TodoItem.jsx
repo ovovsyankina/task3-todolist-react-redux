@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./TodoItem.scss";
+import styles from "./TodoItem.module.scss";
 
 const TodoItem = ({
   todo,
@@ -14,20 +14,20 @@ const TodoItem = ({
   onEditTodoItemEnter,
 }) => {
   return (
-    <li className="todo">
+    <li className={styles.todo}>
       <input
         type="checkbox"
-        className="todo_checkbox"
+        className={styles.todo_checkbox}
         checked={todo.complete}
         onChange={onCheck}
         id={todo.id}
       ></input>
-      <label className="label_textTask" htmlFor={todo.id}></label>
+      <label className={styles.label_textTask} htmlFor={todo.id}></label>
       {isEdit ? (
         <input
           type="text"
           value={editText}
-          className="textTask_input"
+          className={styles.textTask_input}
           onChange={(e) => setEditText(e.target.value)}
           ref={(input) => input && input.focus()}
           onBlur={onEditTodoItem}
@@ -36,12 +36,12 @@ const TodoItem = ({
           }}
         />
       ) : (
-        <div className="textTask" onDoubleClick={() => setEdit(true)}>
+        <div className={styles.textTask} onDoubleClick={() => setEdit(true)}>
           {todo.text.trim()}
         </div>
       )}
 
-      <button className="todoDelete" onClick={onDelete}></button>
+      <button className={styles.todoDelete} onClick={onDelete}></button>
     </li>
   );
 };

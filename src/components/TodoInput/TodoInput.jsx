@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./TodoInput.scss";
+import styles from "./TodoInput.module.scss";
 
 const TodoInput = ({ value, addNewTodo, setValue, onCheckAll }) => {
   return (
-    <div className="inputField">
-      <label className="allCompleted" onClick={onCheckAll}></label>
+    <div className={styles.inputField}>
+      <label className={styles.allCompleted} onClick={onCheckAll}></label>
       <input
         type="text"
         value={value}
-        className="inputText"
+        className={styles.inputText}
         placeholder="What needs to be done?"
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {

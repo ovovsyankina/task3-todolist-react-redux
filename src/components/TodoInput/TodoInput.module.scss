@@ -4,6 +4,7 @@
 .root {
   width: 1170px;
   margin-top: 70px;
+
   @include screen {
     width: 95%;
   }
@@ -31,10 +32,12 @@
     font-size: 34px;
     content: "❯";
   }
+
   @include tablet {
     &::before {
       font-size: 28px;
     }
+
     & {
       margin: 32px 27px 10px 14px;
     }
@@ -54,6 +57,7 @@
     border: 3px solid $black-color;
     outline: none;
   }
+
   @include tablet {
     padding: 5px 20px 5px 60px;
     font-size: 25px;
@@ -62,6 +66,7 @@
 
 ::placeholder {
   opacity: 0.3;
+
   @include tablet {
     font-size: 18px;
   }

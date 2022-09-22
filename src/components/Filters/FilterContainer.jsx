@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
+import { number, string } from "prop-types";
 import {
   activeFilter,
   allFilter,
@@ -41,8 +41,8 @@ const FilterContainer = ({ counter, filter }) => {
 };
 
 FilterContainer.propTypes = {
-  counter: PropTypes.func,
-  filter: PropTypes.string,
+  counter: number,
+  filter: string,
 };
 
 export default FilterContainer;

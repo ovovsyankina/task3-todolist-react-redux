@@ -21,8 +21,10 @@ const TodoItem = ({
         checked={todo.complete}
         onChange={onCheck}
         id={todo.id}
-      ></input>
-      <label className={styles.label_textTask} htmlFor={todo.id}></label>
+      />
+
+      <label className={styles.label_textTask} htmlFor={todo.id} />
+
       {isEdit ? (
         <input
           type="text"
@@ -41,7 +43,7 @@ const TodoItem = ({
         </div>
       )}
 
-      <button className={styles.todo_delete} onClick={onDelete}></button>
+      <button className={styles.todo_delete} onClick={onDelete} />
     </li>
   );
 };

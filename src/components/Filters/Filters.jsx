@@ -1,5 +1,5 @@
 import React from "react";
-import { func, string } from "prop-types";
+import { func, string, number } from "prop-types";
 import classnames from "classnames";
 import styles from "./Filters.module.scss";
 
@@ -22,6 +22,7 @@ const Filters = ({
         >
           All
         </button>
+
         <button
           className={classnames(styles.active_filter, {
             [styles.active_button]: filter === "active",
@@ -30,6 +31,7 @@ const Filters = ({
         >
           Active
         </button>
+
         <button
           className={classnames(styles.completed_filter, {
             [styles.active_button]: filter === "completed",
@@ -42,8 +44,9 @@ const Filters = ({
         <button className={styles.clear_completed} onClick={onClearCompleted}>
           Clear Completed
         </button>
+
         <div className={styles.count}>
-          {counter()} item{counter() > 1 ? "s" : ""} left
+          {counter} item{counter > 1 ? "s" : ""} left
         </div>
       </div>
     </div>
@@ -55,7 +58,7 @@ Filters.propTypes = {
   onAllFilter: func,
   onActiveFilter: func,
   onCompletedFilter: func,
-  counter: func,
+  counter: number,
   filter: string,
 };
 

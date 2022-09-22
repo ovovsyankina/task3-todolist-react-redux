@@ -23,6 +23,9 @@ const TodoInputContainer = () => {
     },
     [dispatch, value]
   );
+  const handleChangeInput = (e) => setValue(e.target.value);
+
+  const handleKeyDownAddNewTodo = (e) => addNewTodo(e);
 
   const handleCheckAll = useCallback(() => {
     dispatch(checkAllTodo());
@@ -32,8 +35,9 @@ const TodoInputContainer = () => {
     <TodoInput
       value={value}
       addNewTodo={addNewTodo}
-      setValue={setValue}
       onCheckAll={handleCheckAll}
+      onChangeInput={handleChangeInput}
+      onKeyDownAddNewTodo={handleKeyDownAddNewTodo}
     />
   );
 };

@@ -1,4 +1,6 @@
 @use "../../style/media.scss" as *;
+@use "../../style/color" as *;
+
 .root {
   width: 1170px;
   margin-top: 70px;
@@ -12,12 +14,12 @@
   min-width: 26px;
   height: 26px;
   margin: 32px 27px 10px 27px;
-  color: black;
+  color: $black-color;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 
   &:hover {
-    color: rgb(111, 111, 111);
+    color: $grey-color;
     cursor: pointer;
   }
 
@@ -44,12 +46,12 @@
   height: 80px;
   padding: 5px 60px 5px 100px;
   font-size: 30px;
-  border: 3px solid black;
+  border: 3px solid $black-color;
   border-radius: 10px;
 
   &:focus,
   &:active {
-    border: 3px solid black;
+    border: 3px solid $black-color;
     outline: none;
   }
   @include tablet {

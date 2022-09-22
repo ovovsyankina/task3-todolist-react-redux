@@ -6,7 +6,7 @@ import styles from "./App.module.scss";
 const App = () => {
   return (
     <div>
-      <div className={styles.fon}></div>
+      <div className={styles.fon} />
       <div className={styles.body}>
         <div className={styles.header}>
           <div className={styles.head}>TODO LIST</div>

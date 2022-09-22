@@ -1,3 +1,4 @@
+@use "../../style/media.scss" as *;
 .fon {
   position: absolute;
   z-index: -1;
@@ -26,10 +27,8 @@
   font-family: mon-Bold;
   font-size: 70px;
   letter-spacing: 10px;
-}
-@media screen and (max-width: 600px) {
-  .head {
-    font-size: 60px;
+  @include tablet {
+    font-size: 50px;
     letter-spacing: 0px;
   }
 }

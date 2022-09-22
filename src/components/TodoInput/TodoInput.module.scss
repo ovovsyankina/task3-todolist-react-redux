@@ -1,9 +1,13 @@
-.inputField {
+@use "../../style/media.scss" as *;
+.root {
   width: 1170px;
   margin-top: 70px;
+  @include screen {
+    width: 95%;
+  }
 }
 
-.allCompleted {
+.all_completed {
   position: absolute;
   min-width: 26px;
   height: 26px;
@@ -25,9 +29,17 @@
     font-size: 34px;
     content: "❯";
   }
+  @include tablet {
+    &::before {
+      font-size: 28px;
+    }
+    & {
+      margin: 32px 27px 10px 14px;
+    }
+  }
 }
 
-.inputText {
+.input_text {
   width: 100%;
   height: 80px;
   padding: 5px 60px 5px 100px;
@@ -40,33 +52,15 @@
     border: 3px solid black;
     outline: none;
   }
+  @include tablet {
+    padding: 5px 20px 5px 60px;
+    font-size: 25px;
+  }
 }
 
 ::placeholder {
   opacity: 0.3;
-}
-
-@media screen and (max-width: 1250px) {
-  .inputField {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 700px) {
-  .inputField {
-    width: 95%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .inputText {
-    padding: 5px 20px 5px 70px;
-    font-size: 25px;
-  }
-
-  .allCompleted::before {
-    font-size: 30px;
-  }
-
-  ::placeholder {
-    font-size: 22px;
+  @include tablet {
+    font-size: 18px;
   }
 }

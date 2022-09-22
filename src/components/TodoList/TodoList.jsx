@@ -1,12 +1,12 @@
 import React from "react";
 import TodoItemContainer from "../TodoItem/TodoItemContainer";
-import PropTypes from "prop-types";
+import { array, string, func } from "prop-types";
 import styles from "./TodoList.module.scss";
 import FilterContainer from "../Filters/FilterContainer";
 
 const TodoList = ({ todos, filter, counter, sharedTodos }) => {
   return (
-    <div className={styles.main}>
+    <div className={styles.root}>
       <FilterContainer counter={counter} filter={filter} />
       <div className={styles.list_todo}>
         <ul className={styles.list_items}>
@@ -36,10 +36,10 @@ const TodoList = ({ todos, filter, counter, sharedTodos }) => {
 };
 
 TodoList.propTypes = {
-  todos: PropTypes.array,
-  filter: PropTypes.string,
-  counter: PropTypes.func,
-  sharedTodos: PropTypes.array,
+  todos: array,
+  filter: string,
+  counter: func,
+  sharedTodos: array,
 };
 
 export default TodoList;

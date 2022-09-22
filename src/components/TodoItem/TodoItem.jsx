@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { object, func, bool, string } from "prop-types";
 import styles from "./TodoItem.module.scss";
 
 const TodoItem = ({
@@ -27,7 +27,7 @@ const TodoItem = ({
         <input
           type="text"
           value={editText}
-          className={styles.textTask_input}
+          className={styles.text_task_input}
           onChange={(e) => setEditText(e.target.value)}
           ref={(input) => input && input.focus()}
           onBlur={onEditTodoItem}
@@ -36,26 +36,26 @@ const TodoItem = ({
           }}
         />
       ) : (
-        <div className={styles.textTask} onDoubleClick={() => setEdit(true)}>
+        <div className={styles.text_task} onDoubleClick={() => setEdit(true)}>
           {todo.text.trim()}
         </div>
       )}
 
-      <button className={styles.todoDelete} onClick={onDelete}></button>
+      <button className={styles.todo_delete} onClick={onDelete}></button>
     </li>
   );
 };
 
 TodoItem.propTypes = {
-  todo: PropTypes.object,
-  onDelete: PropTypes.func,
-  onCheck: PropTypes.func,
-  editText: PropTypes.string,
-  isEdit: PropTypes.bool,
-  setEdit: PropTypes.func,
-  onEditTodoItem: PropTypes.func,
-  setEditText: PropTypes.func,
-  onEditTodoItemEnter: PropTypes.func,
+  todo: object,
+  onDelete: func,
+  onCheck: func,
+  editText: string,
+  isEdit: bool,
+  setEdit: func,
+  onEditTodoItem: func,
+  setEditText: func,
+  onEditTodoItemEnter: func,
 };
 
 export default TodoItem;

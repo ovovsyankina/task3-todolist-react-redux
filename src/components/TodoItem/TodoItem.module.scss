@@ -1,3 +1,4 @@
+@use "../../style/media.scss" as *;
 .todo {
   display: flex;
   width: 100%;
@@ -6,7 +7,7 @@
   list-style-type: none;
 }
 
-.textTask {
+.text_task {
   width: calc(100% - 100px);
   font-family: sans-serif;
   word-wrap: break-word;
@@ -17,7 +18,7 @@
   }
 }
 
-.textTask_input {
+.text_task_input {
   all: unset;
   width: calc(100% - 100px);
   font-family: sans-serif;
@@ -29,7 +30,7 @@
   }
 }
 
-.todoDelete {
+.todo_delete {
   width: 30px;
   min-width: 33px;
   height: 30px;
@@ -108,6 +109,12 @@
 
 .todo_checkbox:checked:hover + label::before {
   border-color: #1b1f2b;
+  @include tablet {
+    width: 22px;
+    height: 22px;
+    min-width: 25px;
+    min-height: 25px;
+  }
 }
 
 .label_textTask {
@@ -121,17 +128,8 @@
   &:hover {
     cursor: pointer;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .todo_checkbox + label::before {
-    width: 22px;
-    height: 22px;
-    min-width: 25px;
-    min-height: 25px;
-  }
-
-  .label_textTask {
+  @include tablet {
     width: 22px;
     height: 22px;
     min-width: 25px;
